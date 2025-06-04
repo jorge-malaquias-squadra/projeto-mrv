@@ -1,5 +1,5 @@
-import { Status } from "src/leads/enums/status.enum";
-import { MigrationInterface, QueryRunner } from "typeorm";
+import { Status } from 'src/leads/enums/status.enum';
+import { MigrationInterface, QueryRunner } from 'typeorm';
 
 const data = [
   {
@@ -11,6 +11,7 @@ const data = [
     category: 'Painters',
     description: 'Need to paint 2 aluminum windows and sliding a glass door',
     price: 500 * 100,
+    createdAt: '2025-06-02 12:59:55',
   },
   {
     contactFirstName: 'Craig',
@@ -21,6 +22,7 @@ const data = [
     category: 'Interior Painters',
     description: 'Internal walls 3 colors',
     price: 350 * 100,
+    createdAt: '2025-06-03 12:59:55',
   },
   {
     contactFirstName: 'Thomas',
@@ -31,11 +33,22 @@ const data = [
     category: 'Engineering',
     description: 'Building a new bridge',
     price: 699.99 * 100,
+    createdAt: '2025-06-04 12:59:55',
+  },
+  {
+    contactFirstName: 'Jack',
+    contactLastName: 'Ashton',
+    contactPhoneNumber: '+55111234567',
+    contactEmail: 'jack.ashton@test.com',
+    contactAddress: 'Yanderra 2574',
+    category: 'Engineering',
+    description: 'Building a new bridge',
+    price: 889.0 * 100,
+    createdAt: '2025-06-04 16:00:55',
   },
 ];
 
 export class InsertInitialData1749038084339 implements MigrationInterface {
-
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.query(
       `
@@ -56,7 +69,7 @@ export class InsertInitialData1749038084339 implements MigrationInterface {
               (lead: any) =>
                 `(${Object.values(lead)
                   .map((value) => `'${value}'`)
-                  .join(', ')}, CURRENT_TIMESTAMP, ${Status.PENDING})`,
+                  .join(', ')}, ${Status.PENDING})`,
             )
             .join(',\n')}
         `,
