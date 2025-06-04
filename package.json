@@ -20,5 +20,9 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "@nestjs/mapped-types": "*",
+    "mongodb": "^5.9.2"
+  }
 }

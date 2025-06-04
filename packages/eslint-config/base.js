@@ -18,6 +18,7 @@ export const config = [
       turbo: turboPlugin,
     },
     rules: {
+      "indent": ["error", 2],
       "turbo/no-undeclared-env-vars": "warn",
     },
   },

@@ -1,0 +1,21 @@
+.button {
+  transition: all 0.3s linear;
+  cursor: pointer;
+  border-bottom-width: 3px;
+
+  &, &.primary {
+    background-color: darkorange;
+    color: white;
+    border-bottom-color: rgb(255, 81, 0);
+  }
+
+  &.secondary {
+    background-color: rgb(248, 246, 246);
+    color: rgba(66, 66, 66, 0.904);
+    border-bottom-color: rgb(138, 138, 138);
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
