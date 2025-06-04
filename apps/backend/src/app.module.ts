@@ -1,12 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { DatabaseModule } from './shared/database/mongoose/database.module';
 import { LeadsModule } from './leads/leads.module';
 import { EmailService } from './services/send-email/email.service';
 @Module({
   imports: [
-    DatabaseModule,
     LeadsModule,
     // TypeOrmModule.forRoot({
     //   type: 'mongodb',
